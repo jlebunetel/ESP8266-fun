@@ -4,11 +4,7 @@ se connecte à l'api "api.laboite.cc" afin de récupérer le json et l'envoie su
 
 #include <ESP8266WiFi.h>
 
-const char* ssid     = "ssid";
-const char* password = "password";
-
-const char* host = "api.laboite.cc";
-const char* apikey = "apikey";
+#include "config.h" // WiFi and api configuration
 
 // drapeau indiquant pendant l'analyse de la réponse du serveur
 // si on est dans l'en-tête HTTP (false) ou dans le contenu de 
