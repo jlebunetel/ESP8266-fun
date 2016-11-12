@@ -9,8 +9,7 @@
 
 #include <ESP8266WiFi.h>
 
-const char* ssid = "ssid";
-const char* password = "password";
+#include "config.h" // WiFi configuration
 
 // Create an instance of the server
 // specify the port to listen on as an argument
