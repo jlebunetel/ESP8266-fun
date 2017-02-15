@@ -113,8 +113,6 @@ void loop() {
     digitalWrite(BPin, b);
     digitalWrite(CPin, c);
 
-    delayMicroseconds(100);
-
     // on envoie les données
     // d'abord les lignes du bas de l'afficheur
     for (int j=0; j<32; j++) {
