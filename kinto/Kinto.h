@@ -14,9 +14,14 @@ class Kinto {
       strcpy(this->bucket, bucket);
       strcpy(this->collection, collection);
       this->url = String(server) + "/buckets/" + String(bucket) + "/collections/" + String(collection) + "/records";
+
+      pinMode(LED_BUILTIN, OUTPUT);
+      digitalWrite(LED_BUILTIN, HIGH);
     };
 
     void post(String key, String value) {
+      digitalWrite(LED_BUILTIN, LOW);
+      
       String json = "{\"data\": {\"key\": \"" + key + "\", \"value\": \"" + value + "\"}}";
       Serial.print(url);
       HTTPClient http;
@@ -30,6 +35,8 @@ class Kinto {
       http.setAuthorization(token, secret);
       http.POST(json);
       http.end();
+      
+      digitalWrite(LED_BUILTIN, HIGH);
     };
 
   private:
